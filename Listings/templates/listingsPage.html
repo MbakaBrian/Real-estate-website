@@ -1,0 +1,47 @@
+{% extends 'demo.html' %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Lost Souls</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'CreateListing' %}">Create Listing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="row">
+        {% for item in all %}
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="{{ item.photo }}" class="card-img-top" alt="{{ item.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.title }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Price: ${{ item.price }}</li>
+                        <li class="list-group-item">Bedrooms: {{ item.bedrooms }}</li>
+                        <li class="list-group-item">Bathrooms: {{ item.bathrooms }}</li>
+                        <li class="list-group-item">Status: {{ item.status }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
