@@ -11,12 +11,18 @@ def login_user(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page.
+            return redirect('listingsPage')
             ...
         else:
             # Return an 'invalid login' error message.
             ...
     else:
         return render(request, 'authenticate/login.html', {})
+
+
+def home_page(request):
+    return render(request,"home.html",{})
+
 
 def register_user(request):
     if request.method == "POST":  # Fix capitalization: "POST" instead of "post"
@@ -28,7 +34,7 @@ def register_user(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request, ("Registration Successfull"))
-            return redirect('home')
+            return redirect('listingsPage')
         else:
             # Indentation fix and move form initialization outside the if block
             form = UserCreationForm(request.POST)

@@ -1,0 +1,111 @@
+/* Reset default browser styles */
+body, h1, p, button {
+    margin: 10;
+    padding: 0;
+    color: white;
+}
+
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22pt;
+  }
+
+.card-img-top{
+    width: 100%;
+    height: 100%;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    background-image: url('https://images.freeimages.com/images/large-previews/e85/house-1224030.jpg?fmt');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.card{
+    height: auto;
+    padding: 10px;
+    margin: 10px;
+}
+.card-text {
+    color: black;
+}
+@media (max-width: 576px) { /* Small devices (576px and below) */
+    .card {
+        width: 100%; /* Set the width to 100% for display block */
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+/* Hero section styles */
+.hero-content {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-content button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#buttonJoin{
+    background-color: #0051a8; /* Background color */
+    padding: 10px 20px; /* Padding around the text */
+    color: white; /* Text color */
+    border: 1px solid black; /* Border */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Cursor style */
+    border-radius: 5px; 
+}
+#buttonJoin:hover {
+    background-color: #003d80; /* Darker background color on hover */
+    border-color: #003d80; /* Darker border color on hover */
+}
+
+.hero-content button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styles */
+footer {
+    margin-top: 25%;
+    position: sticky;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}

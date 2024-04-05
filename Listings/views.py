@@ -7,12 +7,14 @@ def listingsPage(request):
     all_listings = Listing.objects.all
     return render(request,"listingsPage.html",{'all':all_listings})
 
+
+
 def add_listing(request):
     if request.method == 'POST':
         form = ListingForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')  # Redirect to a success page
+            return redirect('listingsPage')  # Redirect to a success page
         else:
             print("Form is not valid")
     else:
